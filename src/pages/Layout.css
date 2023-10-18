@@ -1,0 +1,19 @@
+.store {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+@media screen and (max-width: 768px) {
+  .store {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    display: none;
+  }
+
+  .main {
+    grid-area: main;
+  }
+}
