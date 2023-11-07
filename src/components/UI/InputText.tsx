@@ -1,3 +1,5 @@
+import { toChapterCase } from "../../services/utils";
+
 interface Props {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type: string;
@@ -9,9 +11,7 @@ interface Props {
 
 
 const InputText = ({ value, label, type, handleChange, min, max }: Props) => {
-  function toChapterCase(str:string){
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
+  
   return (
     <div className="form-group">
       <label>{toChapterCase(label)}</label>

@@ -1,13 +1,16 @@
+import Author from "./Author";
+import Genre from "./Genre";
+
 export interface BookInfos {
   book_id?: number;
   ISBN?: string;
-  image_link: string;
+  image_link: File | null;
   language: string;
   link: string;
   pages: number;
   title: string;
   year: number;
-  author: string;
+  author: Author;
   country_id: string;
-  genres: string[];
+  genres: Genre[];
 }

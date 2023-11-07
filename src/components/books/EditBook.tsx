@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useBookContext from "../../hooks/useBookContext";
 import { BookInfos } from "../../models/Book";
 import { InputText, SelectCountry } from "../UI";
@@ -33,11 +33,12 @@ const EditBook = () => {
                         handleChange={handleChange}
                         type="text"
                         label="author"
-                        value={editedBook.author}
+                        value={editedBook.author.author_name}
                     />
                     <SelectCountry
-                        country={editedBook.country_id}
+                        val={editedBook.country_id}
                         handleSelected={handleCountry}
+                        label="Country"
                     />
                     <InputText
                         handleChange={handleChange}

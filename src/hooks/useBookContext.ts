@@ -9,7 +9,7 @@ const useBookContext = () => {
 
     const books = context.books;
     
-    const addBook = (book: BookInfos) => {
+    const addBook = (book: BookInfos) => {        
         context.dispatch({ type: ADDBOOK, book: book });
     };
 

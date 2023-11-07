@@ -3,10 +3,11 @@ import useCountry from "../../hooks/useCountry";
 
 interface Props {
   handleSelected: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  country: string;
+  val: string;
+  label:string;
 }
 
-const SelectCountry = ({ handleSelected, country }: Props) => {
+const SelectCountry = ({ handleSelected, val:country,label }: Props) => {
   const { data: countries } = useCountry(); 
   const options = useMemo(
     () =>
@@ -20,7 +21,7 @@ const SelectCountry = ({ handleSelected, country }: Props) => {
   return (
     <div className="container-row">
       <div className="form-group">
-        <label>Country</label>
+        <label>{label}</label>
         <select onChange={(event) => handleSelected(event)} value={country}>
           {options}
         </select>

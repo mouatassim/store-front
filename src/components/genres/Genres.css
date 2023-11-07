@@ -11,6 +11,7 @@
 }
 
 .btn-variant {
+  text-align: start;
   background: var(--color-text-light);
   color: var(--color-primary);
   border: 0;

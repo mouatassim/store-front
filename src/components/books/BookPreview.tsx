@@ -1,5 +1,3 @@
-import React from "react";
-import BookImage from "../../assets/the_fault_in_our_stars.jpg";
 import { BookInfos } from "../../models/Book";
 
 interface Props {
@@ -13,13 +11,13 @@ const BookPreview = ({ book }: Props) => {
             <div className="preview__head">
                 <div>
                     <h2>{book.title}</h2>
-                    <h3 className="text-secondary">{book.author}</h3>
+                    <h3 className="text-secondary">{book.author.author_name}</h3>
                     <p><strong>Country</strong> {book.country_id}</p>
                     <p><strong>Pages</strong> {book.pages}</p>
                     <p><strong>Language</strong> {book.language}</p>
                     <b>genres:</b>
                     <ul className="list">
-                        {book.genres.map(genre=><li className="list__item">{genre} {genre != book.genres.at(-1)?', ':'.'}</li>)}
+                        {book.genres.map(genre=><li className="list__item">{genre || genre != book.genres.at(-1)?', ':'.'}</li>)}
                     </ul>
                     
                 </div>

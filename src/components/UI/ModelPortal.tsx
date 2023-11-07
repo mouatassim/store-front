@@ -4,7 +4,7 @@ import { BookInfos } from '../../models/Book';
 
 
 interface Props {
-  message:BookInfos;
+  message:BookInfos | undefined;
   open: boolean;
   onClose: () => void;
   handleAction: () => void;
@@ -16,7 +16,7 @@ const MODAL_STYLE: React.CSSProperties = {
   transform: 'translate(-50%,-50%)',
   background: '#fff',
   padding: '50px',
-  zIndex: 1,
+  zIndex: 10,
 };
 const OVERLAY_STYLED: React.CSSProperties = {
   position: 'fixed',
@@ -36,7 +36,7 @@ const ModelPortal = ({ open, onClose,message,handleAction }: Props) => {
     <>
       <div style={OVERLAY_STYLED}>
         <div style={MODAL_STYLE}>
-          <h3>are you sure you want to delete the book</h3>
+          <h3>are you sure you want to delete the book {message?.title}</h3>
           <div className="container-row">
             <button className="btn btn-ternary" onClick={onClose}>
               cancel
