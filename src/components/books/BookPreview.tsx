@@ -17,7 +17,7 @@ const BookPreview = ({ book }: Props) => {
                     <p><strong>Language</strong> {book.language}</p>
                     <b>genres:</b>
                     <ul className="list">
-                        {book.genres.map(genre=><li className="list__item">{genre || genre != book.genres.at(-1)?', ':'.'}</li>)}
+                        {book.genres.map(genre=><li className="list__item">{genre != book.genres.at(-1)?', ':'.'}</li>)}
                     </ul>
                     
                 </div>
